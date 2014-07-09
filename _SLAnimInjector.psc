@@ -7,7 +7,7 @@ sslAnimationSlots Property sslAnimSlots Auto
 
 Function LoadAllAnimations()
 
-	Bool IsLooping = True
+	;/Bool IsLooping = True
 	
 	Debug.Trace("Loop Started")
 	
@@ -19,7 +19,7 @@ Function LoadAllAnimations()
 		EndIf
 	EndWhile
 	
-	Debug.Trace("Loop Ended")
+	Debug.Trace("Loop Ended")/;
 
 	LoadAnimation1()
 	;LoadAnimation1()
@@ -33,7 +33,7 @@ Function LoadAllAnimations()
 	etc
 	/;
 	Debug.Trace("LoadAllAnimations called")
-	SendModEvent ("AnimationInjectorFinished")		
+	
 EndFunction
 
 Function LoadAnimation1()
@@ -83,7 +83,7 @@ String animName = "Werewolf_Blowjob"
 		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S2", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
 		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S3", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
 		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S4", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
-		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S5", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
+		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S5", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)		
 		
 		anim.AddPositionStage(a2, "Werewolf_Blowjob_A2_S1", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
 		anim.AddPositionStage(a2, "Werewolf_Blowjob_A2_S2", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
@@ -126,6 +126,12 @@ String animName = "Werewolf_Blowjob"
 		Debug.Trace("Saving " + animName)
 		anim.Save(sslAnimSlots.FindByName(animName))
 		;saves the animation		
+		
+		anim.SetStageTimer(1, 5.0)
+		anim.SetStageTimer(2, 5.0)
+		anim.SetStageTimer(3, 5.0)
+		anim.SetStageTimer(4, 5.0)
+		anim.SetStageTimer(5, 5.0)
 		
 	EndIf
 EndFunction
@@ -220,6 +226,12 @@ String animName = "Werewolf_Blowjob2"
 		Debug.Trace("Saving " + animName)
 		anim.Save(sslAnimSlots.FindByName(animName))
 		;saves the animation		
+		
+		anim.SetStageTimer(1, 5.0)
+		anim.SetStageTimer(2, 5.0)
+		anim.SetStageTimer(3, 5.0)
+		anim.SetStageTimer(4, 5.0)
+		anim.SetStageTimer(5, 5.0)
 		
 	EndIf
 EndFunction
