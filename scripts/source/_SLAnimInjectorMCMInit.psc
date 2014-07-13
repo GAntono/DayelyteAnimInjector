@@ -6,7 +6,6 @@ Bool FirstTime = True
 Event OnConfigInit()
 	Pages = New String[1]
 	Pages[0] = "General"
-	;RegisterForModEvent("AnimationInjectorFinished", "OnAnimationRegistered")
 EndEvent
 
 Event OnPageReset(String asPage)
@@ -21,8 +20,7 @@ Event OnPageReset(String asPage)
 		
 		If(FirstTime)
 			RegisterOrReregister = AddTextOption("Animations", "Register")
-		Else
-			;SetOptionFlags(RegisterOrReregister, OPTION_FLAG_NONE)
+		Else			
 			RegisterOrReregister = AddTextOption("Animations", "Re-register", OPTION_FLAG_NONE)
 		EndIf
 	EndIf
@@ -38,7 +36,3 @@ Event OnOptionSelect(Int auiOption)
 		Injector.LoadAllAnimations()
 	EndIf
 EndEvent
-
-;/Event OnAnimationRegistered(string eventName, string strArg, float numArg, Form sender)
-	SetTextOptionValue(RegisterOrReregister, "Done")
-EndEvent/;
