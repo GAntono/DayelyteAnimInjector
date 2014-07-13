@@ -4,9 +4,10 @@ ScriptName _SLAnimInjector Extends sslAnimationFactory
 import sslObjectFactory
 SexLabFramework Property SexLab Auto
 sslAnimationSlots Property sslAnimSlots Auto
+sslCreatureAnimationSlots Property sslCreatureAnimSlots Auto
 
 Function LoadAllAnimations()
-
+	
 	Bears = new string[3]
 	Bears[0] = "BearBlackRace"
 	Bears[1] = "BearBrownRace"
@@ -151,12 +152,10 @@ EndFunction
 
 Function LoadAnimation1()
 
-	PrepareFactoryCreatures()
-
 	String animName = "(Werewolf) Blowjob"
 
-	SexLab.RegisterAnimation(animName)
-	sslBaseAnimation anim = sslAnimSlots.GetByRegistrar(animName)
+	SexLab.RegisterCreatureAnimation(animName)
+	sslBaseAnimation anim = sslCreatureAnimSlots.GetByRegistrar(animName)
 	
 	If anim != None
 		Debug.Notification("Adding " + animName)
@@ -188,7 +187,7 @@ Function LoadAnimation1()
 		
 		Debug.Trace("Saving " + animName)
 		
-		anim.Save(sslAnimSlots.FindByName(animName))	
+		anim.Save(sslCreatureAnimSlots.FindByName(animName))	
 		
 		anim.SetStageTimer(1, 5.0)
 		anim.SetStageTimer(2, 5.0)
@@ -202,12 +201,10 @@ EndFunction
 
 Function LoadAnimation2()
 
-	PrepareFactoryCreatures()
-
 	String animName = "(Werewolf) Blowjob2"
 
-	SexLab.RegisterAnimation(animName)
-	sslBaseAnimation anim = sslAnimSlots.GetByRegistrar(animName)
+	SexLab.RegisterCreatureAnimation(animName)
+	sslBaseAnimation anim = sslCreatureAnimSlots.GetByRegistrar(animName)
 	
 	If anim != None
 		Debug.Notification("Adding " + animName)
@@ -239,7 +236,7 @@ Function LoadAnimation2()
 		
 		Debug.Trace("Saving " + animName)
 		
-		anim.Save(sslAnimSlots.FindByName(animName))
+		anim.Save(sslCreatureAnimSlots.FindByName(animName))
 		
 		anim.SetStageTimer(1, 5.0)
 		anim.SetStageTimer(2, 5.0)
