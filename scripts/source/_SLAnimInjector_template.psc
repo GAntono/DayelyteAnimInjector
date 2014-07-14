@@ -173,15 +173,17 @@ IMPORTANT: afterwards, add the name of the new function to the above LoadAllAnim
 	;/Replace TRUEORFALSE with "True" if this is a creature animation and with "False" if this a human animation.
 	/;
 	
+	sslBaseAnimation anim
+	
 	If (IsCreatureAnimation == True)
 	
 		SexLab.RegisterCreatureAnimation(animName)
-		sslBaseAnimation anim = sslCreatureAnimSlots.GetByRegistrar(animName)
+		anim = sslCreatureAnimSlots.GetByRegistrar(animName)
 	
 	Else
 	
 		SexLab.RegisterAnimation(animName)
-		sslBaseAnimation anim = sslAnimSlots.GetByRegistrar(animName)
+		anim = sslAnimSlots.GetByRegistrar(animName)
 		
 	EndIf
 	
@@ -190,6 +192,7 @@ IMPORTANT: afterwards, add the name of the new function to the above LoadAllAnim
 	If anim != None
 		Debug.Notification("Adding " + animName)
 		Debug.Trace("Adding " + animName)
+		
 		anim.Name = animName		
 		
 		;	CONTENT
@@ -207,13 +210,14 @@ IMPORTANT: afterwards, add the name of the new function to the above LoadAllAnim
 		;	CREATURE RACE
 		If (IsCreatureAnimation == True)
 		
-			String[] RACEID	;only useful to allow the script to compile without errors
-		
+			String[] RACEID		;/useful to allow the script to compile without errors
+								 without the animator having to delete the whole IF block/;
+								 
 			anim.SetRaceIDs(RACEID)
 			;/Replace RACEID with the creature race you want to ragister this animation for.
 			Valid races are: Bears, SabreCats, Chaurus, Dragons, Draugrs, Falmers, Giants, Horses, 
 			Spiders, LargeSpiders, Trolls, Werewolves, Wolves, Dogs, VampireLords, Gargoyles, Seekers
-			You don't
+			If this NOT a creature animation, just leave RACEID as is.
 			/;
 			
 		EndIf
