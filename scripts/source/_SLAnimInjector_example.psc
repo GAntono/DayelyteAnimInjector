@@ -7,26 +7,6 @@ sslAnimationSlots Property sslAnimSlots Auto
 sslCreatureAnimationSlots Property sslCreatureAnimSlots Auto
 _SLAnimInjectorRaces Property SLAnimInjectorRaces Auto
 
-;/
-String[] Bears = SLAnimInjectorRaces.Bears
-String[] SabreCats = SLAnimInjectorRaces.SabreCats	
-String[] Chaurus = SLAnimInjectorRaces.Chaurus	
-String[] Dragons = SLAnimInjectorRaces.Dragons
-String[] Draugrs = SLAnimInjectorRaces.Draugrs
-String[] Falmers = SLAnimInjectorRaces.Falmers
-String[] Giants = SLAnimInjectorRaces.Giants
-String[] Horses = SLAnimInjectorRaces.Horses
-String[] Spiders = SLAnimInjectorRaces.Spiders
-String[] LargeSpiders = SLAnimInjectorRaces.LargeSpiders
-String[] Trolls = SLAnimInjectorRaces.Trolls
-String[] Werewolves = SLAnimInjectorRaces.Werewolves
-String[] Wolves = SLAnimInjectorRaces.Wolves
-String[] Dogs = SLAnimInjectorRaces.Dogs
-String[] VampireLords = SLAnimInjectorRaces.VampireLords
-String[] Gargoyles = SLAnimInjectorRaces.Gargoyles
-String[] Seekers = SLAnimInjectorRaces.Seekers
-/;
-
 Function LoadAllAnimations()
 
 	SLAnimInjectorRaces.InitializeRacesArrays()
