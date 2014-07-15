@@ -301,3 +301,21 @@ IMPORTANT: afterwards, add the name of the new function to the above LoadAllAnim
 		
 	EndIf
 EndFunction
+
+string[] Bears
+string[] SabreCats
+string[] Chaurus
+string[] Dragons
+string[] Draugrs
+string[] Falmers
+string[] Giants
+string[] Horses
+string[] Spiders
+string[] LargeSpiders
+string[] Trolls
+string[] Werewolves
+string[] Wolves
+string[] Dogs
+string[] VampireLords
+string[] Gargoyles
+string[] Seekers
