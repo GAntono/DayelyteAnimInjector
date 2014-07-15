@@ -18,7 +18,12 @@ string[] Property Dogs Auto
 string[] Property VampireLords Auto
 string[] Property Gargoyles Auto
 string[] Property Seekers Auto
-;declaring all arrays as properties so they can be accessed from other scripts
+;declaring all SexLab race arrays as properties so they can be accessed from other scripts
+
+String[] Property RACEID Auto
+;/dummy array property to allow the injector script to compile
+without the animator having to delete the RACEID IF block/;
+
 
 Function InitializeRacesArrays()
 ;populate the races arrays with the races they should contain

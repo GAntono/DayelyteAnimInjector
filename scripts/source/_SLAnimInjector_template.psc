@@ -77,9 +77,6 @@ IMPORTANT: afterwards, add the name of the new function to the above LoadAllAnim
 		;	CREATURE RACE
 		If (IsCreatureAnimation == True)
 		
-			String[] RACEID		;/useful to allow the script to compile without errors
-								 without the animator having to delete the whole IF block/;
-								 
 			anim.SetRaceIDs(SLAnimInjectorRaces.RACEID)
 			;/Replace RACEID with the creature race you want to ragister this animation for.
 			Valid races are: Bears, SabreCats, Chaurus, Dragons, Draugrs, Falmers, Giants, Horses, 

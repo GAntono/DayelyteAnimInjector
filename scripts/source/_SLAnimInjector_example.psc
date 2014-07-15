@@ -49,8 +49,6 @@ Function LoadAnimation1()
 
 		If (IsCreatureAnimation == True)
 		
-			String[] RACEID
-		
 			anim.SetRaceIDs(SLAnimInjectorRaces.Werewolves)
 			
 		EndIf		
@@ -127,9 +125,7 @@ Function LoadAnimation2()
 
 		If (IsCreatureAnimation == True)
 		
-			String[] RACEID
-		
-			anim.SetRaceIDs(RACEID)
+			anim.SetRaceIDs(SLAnimInjectorRaces.RACEID)
 			
 		EndIf		
 
