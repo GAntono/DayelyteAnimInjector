@@ -95,23 +95,39 @@ Function LoadAnimation1()
 		;writes the same message in the log
 		
 		anim.Name = animName
-		;as we said, anim holds an sslBaseAnimation object which is our animation.
-		;anim.Name 
+		;anim holds an sslBaseAnimation object which is our animation.
+		;anim.Name points to the "Name" property of the anim object (the "Name" property can be found in sslBaseAnimation.psc)
+		;animName is loaded into anim.Name, effectively configuring this animation to have this name
 		
 		anim.SetContent(Sexual)
+		;sets the content of anim to Sexual
+		;this works a bit different: anim.SetContent() runs the SetContent() function from the anim (sslBaseAnimation.psc) script.
+		;then the SetContent() function is responsible for setting the content to whatever argument it is given (Sexual)
 		
 		anim.SoundFX = Sucking
+		;sets the sound effect of anim to Sucking (works like anim.Name)
 
 		If (IsCreatureAnimation == True)
+		;if the animation is set as a creature animation
 		
 			anim.SetRaceIDs(SLAnimInjectorRaces.Werewolves)
+			;sets the race of anim to Werewolves (works like anim.Name)
+			;the property "Werewolves" is fetched from the SLAnimInjectorRaces.psc
 			
 		EndIf		
 		
 		int a1 = anim.AddPosition(Male)
+		;runs the AddPosition() function from anim and gives it the argument Male
+		;loads it into the int-type variable a1
+		;a1 is defined as "int" (integer) because AddPosition() returns an integer as result (0 for male, 1 for female)
+		
 		int a2 = anim.AddPosition(Creature, AddCum=Oral)
+		;the second position for anim is set as Creature and loaded into a2
+		;Cum is also set to Oral
 
 		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S1", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
+		;adds the first stage for anim
+		;AddPositionStage takes all the parameters given and configures it accordingly
 		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S2", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
 		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S3", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
 		anim.AddPositionStage(a1, "Werewolf_Blowjob_A1_S4", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
@@ -124,20 +140,30 @@ Function LoadAnimation1()
 		anim.AddPositionStage(a2, "Werewolf_Blowjob_A2_S5", forward = 0.0, side = 0.0, up = 0.0, rotate = 0.0, silent = false, openMouth = false, strapon = true, sos = 0)
 
 		anim.AddTag("Werewolf")
+		;runs the AddTag() function from anim. Sets the tag to "Werewolf"
 		
 		Debug.Trace("Saving " + animName)
+		;writes this message to the log
 		
 		If (IsCreatureAnimation == True)
+		;if this is a creature animation
 			
-			anim.Save(sslCreatureAnimSlots.FindByName(animName))	
+			anim.Save(sslCreatureAnimSlots.FindByName(animName))
+			;runs the Save() function from anim
+			;the argument of the function (parethesis) contains another function
+			;FindByName is run from sslCreatureAnimSlots. It looks up the animation animName in the Creature Animation Slots and passes it to Save()
+			;then Save() just saves (finalises) the configuration (does some internal framework maintenance stuff )
 
 		Else
+		;if the is not a creature animation
 		
 			anim.Save(sslAnimSlots.FindByName(animName))
+			;does the same as above. Only difference is uses the (non-creature) animation slots
 		
 		EndIf		
 		
 		anim.SetStageTimer(1, 5.0)
+		;runs the SetStageTimer from the anim script
 		anim.SetStageTimer(2, 5.0)
 		anim.SetStageTimer(3, 5.0)
 		anim.SetStageTimer(4, 5.0)
