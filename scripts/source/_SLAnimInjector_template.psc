@@ -80,7 +80,7 @@ IMPORTANT: afterwards, add the name of the new function to the above LoadAllAnim
 			anim.SetRaceIDs(SLAnimInjectorRaces.RACEID)
 			;/Replace RACEID with the creature race you want to ragister this animation for.
 			Valid races are: Bears, SabreCats, Chaurus, Dragons, Draugrs, Falmers, Giants, Horses, 
-			Spiders, LargeSpiders, Trolls, Werewolves, Wolves, Dogs, VampireLords, Gargoyles, Seekers
+			Spiders, LargeSpiders, Trolls, Werewolves, Wolves, Dogs, VampireLords, Gargoyles, Rieklings, Seekers
 			If this NOT a creature animation, just leave RACEID as is.
 			/;
 			
