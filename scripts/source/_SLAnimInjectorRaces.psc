@@ -17,6 +17,7 @@ string[] Property Wolves Auto
 string[] Property Dogs Auto
 string[] Property VampireLords Auto
 string[] Property Gargoyles Auto
+string[] Property Rieklings Auto
 string[] Property Seekers Auto
 ;declaring all SexLab race arrays as properties so they can be accessed from other scripts
 
@@ -160,6 +161,10 @@ Function InitializeRacesArrays()
 	Gargoyles[3] = "_00FrostBruteRace"
 	Gargoyles[4] = "_00WrathBruteRace"
 	Gargoyles[5] = "_00DramanBruteRace"
+	
+	Rieklings = new string[2]
+	Rieklings[0] = "DLC2RieklingRace"
+	Rieklings[1] = "DLC2ThirskRieklingRace"
 
 	Seekers = new string[1]
 	Seekers[0] = "DLC2SeekerRace"	
